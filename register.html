@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="css/style-register.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body background="assets/Backgound.jpg">
+    <div id="register">
+        <form id="registerForm">
+            <div id="input">
+                <table>
+                    <tr>
+                        <td>
+                            <h2 id="regtext">Register</h2>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="name">Username</label>
+                            <div>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="email">Email</label>
+                            <div>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="pass">Password</label>
+                            <div>
+                                <input type="password" id="pass" name="pass" required>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="conpass">Password Confirmation</label>
+                            <div>
+                                <input type="password" id="conpass" name="conpass" required>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button type="submit" formaction="login.html">Register</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="arehave">Already have an account? <a href="login.html">Login</a></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

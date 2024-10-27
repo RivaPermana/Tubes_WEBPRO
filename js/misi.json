@@ -1,0 +1,23 @@
+{
+    "missions": [
+      {
+        "id": "misi_1",
+        "nama": "Membersihkan Kamar",
+        "poin": 100,
+        "img": "assets/img1.png"
+      },
+      {
+        "id": "misi_2",
+        "nama": "Membersihkan Halaman Rumah",
+        "poin": 100,
+        "img": "assets/img2.png"
+      },
+      {
+        "id": "misi_3",
+        "nama": "Membersihkan Kamar",
+        "poin": 100,
+        "img": "assets/img3.png"
+      }
+    ]
+  }
+  
