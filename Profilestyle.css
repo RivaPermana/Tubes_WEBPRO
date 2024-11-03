@@ -1,0 +1,123 @@
+body {
+    height: 100vh;
+    background-color: rgb(88, 88, 88);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+  }
+
+  .form-container {
+    background-color: rgb(44, 54, 42);
+    padding: 30px;
+    border-radius: 20px;
+    width: 25rem;
+    text-align: center;
+    margin-bottom: 30px;  
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .profile-header {
+    margin-bottom: 30px;
+  }
+
+  .profile-header img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .profile-header h3 {
+    color: white;
+    margin: 5px ;
+    font-weight: lighter;
+  }
+  .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+
+  .form-group label {
+    display: block;
+    color: white;
+    margin-bottom: 5px;
+  }
+
+  .form-group input {
+    width: 97%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 16px;
+  }
+
+  .submit-btn {
+    width: 30%;
+    padding: 10px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .submit-btn:hover {
+    background-color: rgb(44, 54, 42);
+    color: white;
+  }
+
+  .error {
+    color: red;
+    font-size: 0.9em;
+    display: none;
+  }
+  .nav-links{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+    background: rgb(88, 88, 88);
+    padding:10px;
+    margin: 0;
+  }
+  .nav-links li{
+    list-style: none;
+    margin: 0 12px;
+  }
+  .nav-links li a{
+    position: relative;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 6px 0;
+    text-decoration: none;
+  }
+  .nav-links li a:before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background: rgb(44, 54, 42);
+    border-radius: 12px;
+    transition: all 0.4s ease;
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  .nav-links li a:hover:before{
+    width: 100%;
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  .nav-links img{
+    height: 40px;
+    width: 40px;
+    border-radius: 70%;
+  }
