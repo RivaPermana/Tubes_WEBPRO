@@ -1,0 +1,22 @@
+{
+    "rewards": [
+        {
+            "id": "voucher_1",
+            "nama": "Voucher Diskon 10%",
+            "deskripsi": "Dapatkan diskon 10% untuk pembelian di toko A.",
+            "poin": 100
+        },
+        {
+            "id": "voucher_2",
+            "nama": "Voucher Gratis Ongkir",
+            "deskripsi": "Nikmati gratis ongkos kirim untuk pembelian di e-commerce B.",
+            "poin": 150
+        },
+        {
+            "id": "voucher_3",
+            "nama": "Voucher Cashback Rp50.000",
+            "deskripsi": "Cashback Rp50.000 untuk pembelian di supermarket C.",
+            "poin": 200
+        }
+    ]
+}

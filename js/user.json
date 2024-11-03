@@ -1,0 +1,25 @@
+{
+    "users": [
+        {
+            "username": "john_doe",
+            "email": "john@example.com",
+            "password": "password123",
+            "misi": [],
+            "poin": 150
+        },
+        {
+            "username": "jane_smith",
+            "email": "jane@example.com",
+            "password": "securepass",
+            "misi": [],
+            "poin": 200
+        },
+        {
+            "username": "alice_wonder",
+            "email": "alice@example.com",
+            "password": "alicepass",
+            "misi": [],
+            "poin": 100
+        }
+    ]
+}
