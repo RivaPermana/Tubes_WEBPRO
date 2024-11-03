@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/style-login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script/login.js"></script>
+</head>
+
+<body background="asset/Backgound.jpg">
+    <div id="register">
+        <form id="loginForm">
+            <div id="input">
+                <table>
+                    <tr>
+                        <td>
+                            <h2 id="regtext">Login</h2>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="name">Username</label>
+                            <div>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="pass">Password</label>
+                            <div>
+                                <input type="password" id="pass" name="pass" required>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button type="submit">Login</button>
+                        </td>
+                    </tr>
+                    <tr>
+                         <td>
+                            <div id="arehave">Don't have an account? <a href="register.html">Register</a></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
