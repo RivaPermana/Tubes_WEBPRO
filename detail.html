@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clean Quest</title>
+    <!-- Menghubungkan file CSS eksternal -->
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/detail.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Bagian Header untuk menampilkan logo, navigasi, dan gambar profil -->
+        <header class="header">
+            <div class="logo">
+                <!-- Bagian Logo dengan elemen berbentuk persegi panjang dan teks -->
+                <img src="asset/logo.png" alt="Logo" class="logo-bar1">
+                <span class="logo-text">CLEAN QUEST</span>
+            </div>
+            <!-- Navigasi Utama (About, Home, Mission, Poin Rewards) -->
+            <nav class="nav-menu">
+                <div class="nav-item" data-page="about.html">About</div>
+                <div class="nav-item" data-page="home.html">Home</div>
+                <div class="nav-item" data-page="misi.html">Mission</div>
+                <div class="nav-item" data-page="Poin_rewards.html">Poin Rewards</div>
+
+            </nav>
+            <!-- Placeholder untuk gambar profil -->
+            <div class="profile-photo-container">
+                <img src="asset/Profile.png" alt="Profile Photo" id="profile-photo">
+            </div>
+        </header>
+
+        <!-- Banner Reward yang berisi informasi detail tentang reward -->
+        <section class="reward-banner">
+            <!-- Gambar utama dari reward -->
+            <img class="reward-img" src="asset/img.png" alt="Reward Image">
+            <!-- Konten untuk detail reward -->
+            <div class="reward-content">
+                <!-- Judul Reward -->
+                <h1 id="namaVoc"></h1>
+                <!-- Poin yang diperlukan untuk menukar voucher -->
+                <h2 id="poinVoc"></h2>
+                <!-- Masa berlaku voucher -->
+                <p id="perVoc"></p>
+                <!-- Jumlah voucher yang tersisa -->
+                <p>Sisa point</p> <!--Masih proses karena mambutuhkan php untuk update nilai-->
+                <!-- Deskripsi singkat -->
+                <p id="deskVoc"></p>
+                <!-- Tombol untuk menukar poin -->
+                <button id="exchange-button">Tukar</button>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

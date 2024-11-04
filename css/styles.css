@@ -1,0 +1,160 @@
+/* Pengaturan umum untuk body */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #333333;
+    color: white;
+}
+
+.reward-img {
+    height: 440px;
+    width: auto;
+}
+
+/* Pengaturan untuk container utama */
+.container {
+    width: 1920px;
+    margin: auto;
+    position: relative;
+}
+
+/* Bagian Header */
+.header {
+    width: 1920px;
+    height: 93px;
+    background: #333333;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 58px;
+    position: relative;
+}
+
+/* Logo dan Elemen Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-bar1 {
+    margin-right: 10px;
+    width: 65px;
+    height: 65px;
+}
+
+/* Teks untuk Logo */
+.logo-text {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* Menu Navigasi */
+.nav-menu {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Item di Menu Navigasi */
+.nav-item {
+    font-size: 17px;
+    font-weight: 500;
+    border: 1px solid #84B349;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.nav-item:hover {
+    background-color: #45a049;
+}
+
+.profile-photo-container {
+    margin-right: 90px;
+    width: 60px; 
+    height: 60px;
+    border-radius: 50%; 
+    overflow: hidden; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e0e0e0; 
+  }
+  
+  #profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+  }
+  
+
+/* Banner Reward */
+.reward-banner {
+    width: 1520px;
+    margin: 150px auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Konten Detail Reward */
+.reward-content {
+    width: 1000px;
+    height: 400px;
+    padding: 20px;
+    background: #51724E;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    text-align: center;
+    color: white;
+}
+
+
+/* Judul Reward */
+.reward-content h1 {
+    font-size: 48px;
+    font-family: 'Albert Sans', sans-serif;
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+/* Jumlah Poin yang Diperlukan */
+.reward-content h2 {
+    font-size: 64px;
+    font-weight: 700;
+    color: #FFE352;
+    margin: 10px 0;
+}
+
+/* Informasi Tambahan Reward */
+.reward-content p {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 5px 0;
+}
+
+/* Tombol Penukaran Poin */
+#exchange-button {
+    background: #4b4b4b;
+    border: none;
+    border-radius: 25px;
+    padding: 20px;
+    font-size: 20px;
+    font-family: 'Albert Sans', sans-serif;
+    font-weight: 500;
+    margin-top: 50px;
+    color: white;
+    box-shadow: none;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+#exchange-button:hover {
+    background-color: #2e2e2e; 
+}
+
+#exchange-button:active {
+    transform: scale(0.95);
+}
