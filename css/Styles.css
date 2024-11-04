@@ -1,0 +1,133 @@
+/* Pengaturan umum untuk body */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #333333;
+    color: white;
+}
+
+/* Pengaturan untuk container utama */
+.container {
+    width: 1920px;
+    margin: auto;
+    position: relative;
+}
+
+/* Bagian Header */
+.header {
+    width: 1920px;
+    height: 93px;
+    background: #333333;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 58px;
+    position: relative;
+}
+
+/* Logo dan Elemen Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-bar1, .logo-bar2 {
+    width: 30px;
+    height: 65px;
+    background: #84B349;
+}
+
+.logo-bar2 {
+    width: 31px;
+    height: 50px;
+    margin-top: 10px;
+}
+
+/* Teks untuk Logo */
+.logo-text {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* Menu Navigasi */
+.nav-menu {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Item di Menu Navigasi */
+.nav-item {
+    font-size: 17px;
+    font-weight: 500;
+    border: 1px solid #84B349;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Gambar Profil */
+.profile-img {
+    width: 87px;
+    height: 86px;
+}
+
+/* Banner Reward */
+.reward-banner {
+    width: 1520px;
+    margin: 50px auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Gambar Reward */
+.reward-img {
+    width: 614px;
+    height: 593px;
+}
+
+/* Konten Detail Reward */
+.reward-content {
+    width: 900px;
+    padding: 20px;
+    background: #51724E;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+}
+
+/* Judul Reward */
+.reward-content h1 {
+    font-size: 48px;
+    font-family: 'Albert Sans', sans-serif;
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+/* Jumlah Poin yang Diperlukan */
+.reward-content h2 {
+    font-size: 64px;
+    font-weight: 700;
+    color: #FFE352;
+    margin: 10px 0;
+}
+
+/* Informasi Tambahan Reward */
+.reward-content p {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 5px 0;
+}
+
+/* Tombol Penukaran Poin */
+.exchange-button {
+    background: #51724E;
+    border-radius: 25px;
+    padding: 20px;
+    font-size: 48px;
+    font-family: 'Albert Sans', sans-serif;
+    font-weight: 500;
+    margin-top: 20px;
+}

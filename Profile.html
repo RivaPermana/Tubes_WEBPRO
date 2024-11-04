@@ -4,43 +4,89 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link type="text/css" rel="stylesheet" href="css/Profilestyle.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <title>Edit Profile</title>
 </head>
 <body>
-    <div class="navbar">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#mission">Mission</a>
-        <a href="#checkpoint">Poin Rewards</a>
-        <img src="assets/Me.jpg" alt="Foto">
-    </div>
+    <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="misi.html">Mission</a></li>
+            <li><a href="Poin_Rewards.html">Poin Rewards</a></li>
+            <li><a href="cekprofile.html"><img src="assets/Me.jpg" alt="foto"></a></li>
+    </ul> 
         <div class="form-container">
             <div class="profile-header">
                 <img src="assets/Me.jpg" alt="Foto Profil">
                 <h3>Username</h3>
             </div>
-            <form>
-            <div class="form-group">
-                <label for="nama">Nama Lengkap:</label>
-                <input type="text" id="nama" name="nama">
-            </div>
-            <div class="form-group">
-                <label for="nomor">Nomor Telepon:</label>
-                <input type="tel"  id="nomor" name="nomor" pattern="^\+62[0-9]{9,13}$" placeholder="+62XXXXXXXX">
-            </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email">
-            </div>
-            <div class="form-group">
-                <label for="tanggal">Tanggal Lahir:</label>
-                <input type="text" id="tanggal" name="tanggal" placeholder="tidak dapat diubah" readonly>
-            </div>
-            <button type="submit" class="submit-btn">Simpan</button>
+            <form id="biodataForm">
+                <div class="form-group">
+                    <label for="nama">Nama Lengkap:</label>
+                    <input type="text" id="nama" name="nama">
+                    <span class="error" id="nameError"></span>
+                </div>
+                <div class="form-group">
+                    <label for="nomor">Nomor Telepon:</label>
+                    <input type="tel"  id="nomor" name="nomor" placeholder="+62XXXXXXXX"> 
+                    <span class="error" id="phoneError"></span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                    <span class="error" id="emailError"></span>
+                </div>
+                <div class="form-group">
+                    <label for="tanggal">Tanggal Lahir:</label>
+                    <input type="text" id="tanggal" name="tanggal" placeholder="tidak dapat diubah" readonly>
+                </div>
+                <button type="button" class="submit-btn">Simpan</button>
             </form>
         </div>
+        <div class="footer">
+            <img src="assets/logo2.png" alt="logoclean">
+            <h2>CLEANQUEST</h2>
+        </div>
+
+        <script>
+            $(document).ready(function() {
+              $('#biodataForm').on('submit', function(e) {
+                e.preventDefault();
+          
+                let isValid = true;
+
+                const namePattern = /^[A-Za-z\s]+$/;
+                const nameValue = $('#nama').val().trim();
+                if (nameValue && !namePattern.test(nameValue)) {
+                    $('#nameError').text("Sesuaikan Dengan Format").show();
+                    isValid = false;
+                } else {
+                    $('#nameError').hide();
+                }
+
+                const phonePattern = /^\+62[0-9]{9,13}$/;
+                const phoneValue = $('#nomor').val().trim();
+                if (phoneValue && !phonePattern.test(phoneValue)) {
+                    $('#phoneError').text("Sesuaikan Dengan Format").show();
+                    isValid = false;
+                } else {
+                    $('#phoneError').hide();
+                }
+          
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                const emailValue = $('#email').val().trim();
+                if (emailValue && !emailPattern.test(emailValue)) {
+                  $('#emailError').text("Sesuaikan Dengan Format").show();
+                  isValid = false;
+                } else {
+                  $('#emailError').hide();
+                }
+          
+                if (isValid) {
+                  alert('Form berhasil dikirim!');
+                }
+              });
+            });
+          </script>
 </body>
-<footer>
-    
-</footer>
 </html>

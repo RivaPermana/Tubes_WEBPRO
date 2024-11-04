@@ -1,7 +1,6 @@
-/* Reset and body styles */
+/* Reset dan gaya body */
 * {
     margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
@@ -20,14 +19,13 @@ body {
 /* Header */
 .header {
     display: flex;
-    align-items: center;
     padding: 20px;
 }
 
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px; 
+    gap: 10px;
 }
 
 .logo-img {
@@ -41,8 +39,8 @@ body {
 
 .header nav {
     display: flex;
-    gap: 20px; 
-    margin-left: auto; 
+    gap: 20px;
+    margin-left: auto;
     align-items: center;
 }
 
@@ -60,14 +58,7 @@ body {
     color: #80b541;
 }
 
-.profile img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-left: 20px;
-}
-
-/* Main content styles */
+/* Gaya konten utama */
 .main-content {
     display: flex;
     flex-grow: 1;
@@ -92,10 +83,9 @@ body {
     color: #f0c431;
 }
 
-/* Tab Menu */
+/* Menu Tab */
 .tab-menu {
     display: flex;
-    justify-content: center;
     margin: 20px 0;
 }
 
@@ -112,10 +102,10 @@ body {
 
 .tab.active {
     background-color: #3c5e3f;
-    color:#fff
+    color: #fff;
 }
 
-/* Tab Content */
+/* Konten Tab */
 .tab-content {
     display: none;
     width: 100%;
@@ -126,38 +116,32 @@ body {
     display: block;
 }
 
-/* Wallet options */
+/* Opsi Dompet */
 .wallet-options {
     display: flex;
     gap: 10px;
-    justify-content: center;
     margin-bottom: 10px;
 }
 
 .wallet-btn {
-    display: flex;
-    align-items: center;
-    justify-content: left;
     padding: 15px;
     width: 1500px;
-    background-color: #f4f4f4;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s, box-shadow 0.3s;
-    text-align: center;
 }
 
 .wallet-btn:hover {
     background-color: #3c5e3f;
-    color: #fff;              
-    transform: scale(1.05);   
-    border: 1px solid #fff; 
+    color: #fff;
+    transform: scale(1.05);
+    border: 1px solid #fff;
 }
 
 .wallet-btn.selected {
-    background-color: #3c5e3f; 
-    color: #fff; 
+    background-color: #3c5e3f;
+    color: #fff;
     border: 2px solid #80b541;
 }
 
@@ -166,42 +150,53 @@ body {
     margin-right: 10px;
 }
 
-/* Points Options */
+/* Opsi Poin */
 .points-options {
     display: flex;
-    justify-content: space-between;
     gap: 5px;
 }
 
 .points-options button {
     flex: 1;
     padding: 10px;
-    background-color: #fff;
-    color: #000;
     border-radius: 5px;
-    text-align: center;
     font-weight: bold;
     cursor: pointer;
     margin-top: 20px;
-    transition: background-color 0.3s, color 0.3s, transform 0.2s; 
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
 }
 
-/* Hover effect untuk pilihan nominal*/
+/* Efek hover untuk pilihan nominal */
 .points-options button:hover {
     background-color: #3c5e3f;
-    color: #fff;              
-    transform: scale(1.05);   
-    border: 1px solid #fff;   
+    color: #fff;
+    transform: scale(1.05);
+    border: 1px solid #fff;
 }
 
-/* Selected button style */
+/* Gaya tombol yang terpilih */
 .points-options button.selected {
-    background-color: #3c5e3f; 
-    color: #fff; 
+    background-color: #3c5e3f;
+    color: #fff;
     border: 2px solid #80b541;
 }
 
-/* Custom Points Section */
+/* Bagian Poin Kustom */
+
+.input {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.currency {
+    position: absolute;
+    left: 10px;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
 .custom-points {
     display: flex;
     flex-direction: column;
@@ -210,7 +205,6 @@ body {
 }
 
 .custom-points input[type="number"] {
-    width: 100%;
     max-width: 200px;
     padding: 10px;
     margin-bottom: 10px;
@@ -236,9 +230,9 @@ body {
 }
 
 .custom-points button:hover {
-    color: #fff;              
-    transform: scale(1.05);   
-    border: 1px solid #fff;   
+    color: #fff;
+    transform: scale(1.05);
+    border: 1px solid #fff;
 }
 
 .custom-points button.selected {
@@ -246,11 +240,12 @@ body {
     color: #fff;
 }
 
-/* Voucher Grid */
+/* Grid Voucher */
 .voucher-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
+    transition: transform 0.2s;
 }
 
 .voucher-card {
@@ -258,15 +253,22 @@ body {
     color: #000;
     padding: 15px;
     border-radius: 10px;
-    text-align: left;
 }
 
-.voucher-card h3{
+.voucher-grid :hover{
+    transform: scale(1.05);
+}
+
+.voucher-link{
+    text-decoration: none;
+}
+
+.voucher-card h3 {
     font-size: 14px;
 }
 
-.voucher-card p{
-    color:#f0c431
+.voucher-card p {
+    color: #f0c431;
 }
 
 .voucher-card img {
@@ -279,7 +281,6 @@ footer {
     background-color: #445442;
     margin-top: auto;
     width: 100%;
-    background-color: #445442;
     padding: 40px 20px;
     text-align: center;
 }

@@ -1,56 +1,97 @@
-// Function untuk menampilkan selected section
+// Menampilkan section yang dipilih
 function showSection(sectionId) {
-    // Remove 'active' class dari semua tab dan content
-    document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
-    document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-    
-    // Add 'active' class ke selected tab dan content
-    document.querySelector(`button[onclick="showSection('${sectionId}')"]`).classList.add('active');
-    document.getElementById(sectionId).classList.add('active');
+    // Menghapus kelas 'active' dari semua tab dan konten
+    $('.tab, .tab-content').removeClass('active');
+
+    // Menambahkan kelas 'active' ke tab dan konten yang dipilih
+    $(`button[onclick="showSection('${sectionId}')"]`).addClass('active');
+    $(`#${sectionId}`).addClass('active');
 }
 
-// Function untuk memilih wallet
+// Memilih atau membatalkan pilihan wallet
 function selectWallet(button) {
-    // Remove 'selected' class dari semua selected button
-    $(".wallet-btn").removeClass("selected");
-
-    // Add 'selected' class ke clicked button
-    $(button).addClass("selected");
+    if (button.classList.contains("selected")) {
+        button.classList.remove("selected");
+    } else {
+        document.querySelectorAll(".wallet-btn").forEach(btn => btn.classList.remove("selected"));
+        button.classList.add("selected");
+    }
 }
 
-// Function untuk memilih nominal
+// Memilih atau membatalkan pilihan nominal poin
 function selectAmount(button) {
-    // Remove 'selected' class dari semua nominal button
-    $(".points-options button").removeClass("selected");
+    const customAmountInput = document.getElementById("custom-amount");
 
-    // Add 'selected' class ke clicked button
-    $(button).addClass("selected");
+    if (button.classList.contains("selected")) {
+        button.classList.remove("selected");
+        customAmountInput.value = "";
+    } else {
+        document.querySelectorAll(".points-options button").forEach(btn => btn.classList.remove("selected"));
+        button.classList.add("selected");
+
+        const amount = button.getAttribute("data-amount");
+        customAmountInput.value = amount;
+    }
 }
 
-// Function untuk konfirmasi penukaran
+// Menetapkan poin awal
+let currentPoints = 10000; // Poin awal yang ditampilkan
+
+// Menampilkan poin saat ini di bagian atas
+function updatePointsDisplay() {
+    const pointsElement = document.querySelector('.points-banner .points');
+    if (pointsElement) {
+        pointsElement.textContent = `${currentPoints.toLocaleString()} Poin ⭐`;
+    }
+}
+updatePointsDisplay();
+
+// Mengonfirmasi penukaran poin
 function confirmExchange() {
-    // Cek apakah wallet telah dipilih
-    const selectedWallet = $(".wallet-btn.selected").length;
+    // Memeriksa apakah wallet telah dipilih
+    const selectedWallet = document.querySelector(".wallet-btn.selected");
     if (!selectedWallet) {
         alert("Tolong pilih jenis e-Wallet terlebih dahulu.");
         return;
     }
 
-    // cek apakah telah memilih nominal atau memasukkan nominal
-    const selectedAmount = $(".points-options button.selected").length;
-    const customAmount = $("#custom-amount").val();
+    // Memeriksa apakah nominal telah dipilih atau jumlah kustom dimasukkan
+    const selectedAmountButton = document.querySelector(".points-options button.selected");
+    let selectedAmount = 0;
 
-    if (!selectedAmount && !customAmount) {
-        alert("Tolong pilih nominal atau masukkan nominal minimal Rp 5.000 untuk penukaran.");
+    if (selectedAmountButton) {
+        selectedAmount = parseInt(selectedAmountButton.getAttribute("data-amount"), 10);
+    } else {
+        const customAmount = document.getElementById("custom-amount").value.replace(/[^\d]/g, "");
+        selectedAmount = parseInt(customAmount, 10) || 0;
+    }
+
+    // Memvalidasi jumlah minimal
+    if (selectedAmount < 5000) {
+        alert("Nominal penukaran harus minimal Rp 5.000.");
         return;
     }
 
-    // menampilkan konfirmas dialog
-    const userConfirmed = confirm("Apakah anda yakin ingin melakukan penukaran?");
-    if (!userConfirmed) {
+    // Memeriksa apakah poin mencukupi
+    const requiredPoints = selectedAmount / 10; // Asumsi 1 poin = Rp 10
+    if (currentPoints < requiredPoints) {
+        alert("Poin tidak mencukupi untuk penukaran.");
         return;
     }
 
-    // menampilkan penukaran berhasil
+    // Menampilkan dialog konfirmasi
+    const userConfirmed = confirm(`Anda yakin ingin menukar ${requiredPoints} poin?`);
+    if (!userConfirmed) return;
+
+    // Mengurangi poin dan memperbarui tampilan
+    currentPoints -= requiredPoints;
+    updatePointsDisplay();
     alert("Penukaran Berhasil!");
+
+    // Membatalkan pilihan wallet dan nominal
+    document.querySelectorAll(".wallet-btn").forEach(btn => btn.classList.remove("selected"));
+    document.querySelectorAll(".points-options button").forEach(btn => btn.classList.remove("selected"));
+
+    // Mengosongkan field jumlah kustom
+    document.getElementById("custom-amount").value = "";
 }
