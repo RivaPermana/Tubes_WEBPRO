@@ -74,6 +74,8 @@ body {
     color: red;
     font-size: 0.9em;
     display: none;
+    padding-top: 5px;
+    font-weight: bold;
   }
   .nav-links{
     position: fixed;

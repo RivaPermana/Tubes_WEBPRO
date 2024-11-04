@@ -20,18 +20,21 @@
                 <img src="Me.jpg" alt="Foto Profil">
                 <h3>Username</h3>
             </div>
-            <form>
+            <form id="biodataForm">
                 <div class="form-group">
                     <label for="nama">Nama Lengkap:</label>
                     <input type="text" id="nama" name="nama">
+                    <span class="error" id="nameError"></span>
                 </div>
                 <div class="form-group">
                     <label for="nomor">Nomor Telepon:</label>
-                    <input type="tel"  id="nomor" name="nomor" pattern="^\+62[0-9]{9,13}$" placeholder="+62XXXXXXXX">
+                    <input type="tel"  id="nomor" name="nomor" placeholder="+62XXXXXXXX"> 
+                    <span class="error" id="phoneError"></span>
                 </div>
                 <div class="form-group">
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email">
+                    <span class="error" id="emailError"></span>
                 </div>
                 <div class="form-group">
                     <label for="tanggal">Tanggal Lahir:</label>
@@ -44,5 +47,46 @@
             <img src="CleanLogo.png" alt="logoclean">
             <h2>CLEANQUEST</h2>
         </div>
+
+        <script>
+            $(document).ready(function() {
+              $('#biodataForm').on('submit', function(e) {
+                e.preventDefault();
+          
+                let isValid = true;
+
+                const namePattern = /^[A-Za-z\s]+$/;
+                const nameValue = $('#nama').val().trim();
+                if (nameValue && !namePattern.test(nameValue)) {
+                    $('#nameError').text("Sesuaikan Dengan Format").show();
+                    isValid = false;
+                } else {
+                    $('#nameError').hide();
+                }
+
+                const phonePattern = /^\+62[0-9]{9,13}$/;
+                const phoneValue = $('#nomor').val().trim();
+                if (phoneValue && !phonePattern.test(phoneValue)) {
+                    $('#phoneError').text("Sesuaikan Dengan Format").show();
+                    isValid = false;
+                } else {
+                    $('#phoneError').hide();
+                }
+          
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                const emailValue = $('#email').val().trim();
+                if (emailValue && !emailPattern.test(emailValue)) {
+                  $('#emailError').text("Sesuaikan Dengan Format").show();
+                  isValid = false;
+                } else {
+                  $('#emailError').hide();
+                }
+          
+                if (isValid) {
+                  alert('Form berhasil dikirim!');
+                }
+              });
+            });
+          </script>
 </body>
 </html>
